@@ -34,70 +34,9 @@
 #define DIO_HIGH 1
 
 
-/***********************************************************************************/
-/*prototypes*/
+ void DIO_read(uint8_t pinNumber, uint8_t port, uint8_t *value);
 
-/***********************************************************************************/
-/*Description: this function is to set the whole port by one value 0 or 1          */
-/*Inputs:      Copy_u8PortId: porta, portb, portc....                              */
-/*             Copy_u8PortValue: DIO_HIGH or DIO_LOW                               */
-/*Outputs:     Void                                                                */
-/***********************************************************************************/
-void u8_vidu8SetPortValue (u8 Copy_u8PortId, u8 Copy_u8PortValue);
+void DIO_write(uint8_t pinNumber, uint8_t port, uint8_t value);
 
+void DIO_init(uint8_t pinNumber, uint8_t port, uint8_t direction);
 
-/***********************************************************************************/
-/*Description: this function is to determine whether the port is input or output   */
-/*Inputs:      Copy_u8PortId: porta, portb, portc....                              */
-/*             Copy_u8PortDirection: DIO_INPUT or DIO_OUTPUT                       */
-/*Outputs:     Void                                                                */
-/***********************************************************************************/
-void u8_vidSetPortDirection (u8 Copy_u8PortId, u8 Copy_u8PortDirection);
-
-
-/***********************************************************************************/
-/*Description: this function is to set each pin to be DIO_INPUT or DIO_OUTPUT      */
-/*Inputs:      Copy_u8PortId: PORTA, PORTB,....                                    */
-/*             Copy_u8PinId: PIN0,PIN1,PIN2....                                    */
-/*             Copy_u8Direction: DIO_INPUT or DIO_OUTPUT                           */
-/*Outputs:     Void                                                                */
-/***********************************************************************************/
-void u8_vidu8SetPinDirection (u8 Copy_u8PortId, u8 Copy_u8PinId, u8 Copy_u8Direction);
-
-
-/***********************************************************************************/
-/*Description: this function is to set each pin to be DIO_HIGH or DIO_LOW          */
-/*Inputs:      Copy_u8PortId: PORTA, PORTB,....                                    */
-/*             Copy_u8PinId: PIN0,PIN1,PIN2....                                    */
-/*             Copy_u8Value: DIO_HIGH or DIO_LOW                                   */
-/*Outputs:     Void                                                                */
-/***********************************************************************************/
-void u8_vidu8SetPinValue (u8 Copy_u8PortId, u8 Copy_u8PinId, u8 Copy_u8Value);
-
-
-/***********************************************************************************/
-/*Description: this function is to get the value of a certain pin                  */
-/*Inputs:      Copy_u8PortId: PORTA, PORTB,....                                    */
-/*             Copy_u8PinId: PIN0,PIN1,PIN2....                                    */
-/*Outputs:     Copy_u8PinValue                                                     */
-/***********************************************************************************/
-u8 u8_GetPin (u8 Copy_u8portId, u8 Copy_u8PinId);
-
-
-/***********************************************************************************/
-/*Description: this function is to toggle certain pin                              */
-/*Inputs:      Copy_u8PortId: PORTA, PORTB,....                                    */
-/*             Copy_u8PinId: PIN0,PIN1,PIN2....                                    */
-/*Outputs:     Copy_u8PinValue                                                     */
-/***********************************************************************************/
-void u8_vidtogglePin (u8 Copy_u8PortId, u8 Copy_u8PinId, u8 Copy_u8Direction);
-
-
-/***********************************************************************************/
-/*Description: this function is to toggle the value of a certain port              */
-/*Inputs:      Copy_u8PortId: PORTA, PORTB,....                                    */
-/*Outputs:     Void                                                                */
-/***********************************************************************************/
-void u8_vidtogglePort(u8 Copy_u8PortId);
-
-#endif /* DIO_INTERFACE_H_ */

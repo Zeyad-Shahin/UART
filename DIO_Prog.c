@@ -19,34 +19,8 @@
 
 
 
-/************************************************
- *Desc: Setting all the port at same time       *
- *inputs: Copy_u8PortId: PRTA,PORTB,...         *
- *        Copy_u8PortValue: DIO_HIGH OR DIO_LOW *
- *output :Void                                  *
- ************************************************/
-void u8_vidu8SetPortValue (u8 Copy_u8PortId, u8 Copy_u8PortValue) /*CHECKED*/
-{
-		switch(Copy_u8PortId)
-		{
-		case PORTA : PORTA_Register = Copy_u8PortValue; break;
-		case PORTB : PORTB_Register = Copy_u8PortValue; break;
-		case PORTC : PORTC_Register = Copy_u8PortValue; break;
-		case PORTD : PORTD_Register = Copy_u8PortValue; break;
-		default    : /*error*/                          break;
-		}
-}
 
-
-
-
-/************************************************
- *Desc:   Setting the port to be DIO_HIGH/LOW   *
- *Inputs: Copy_u8PortId: PRTA,PORTB,...         *
- *        Copy_u8PortDirection: DIO_HIGH/LOW    *
- *Output :Void                                  *
- ************************************************/
-void DIO_init(uint8_t pinNumber, uint8_t port, uint8_t direction);
+void DIO_init(uint8_t pinNumber, uint8_t port, uint8_t direction)
 {
 	if((port<=PORTD)&&(pinNumber<=PIN7))
 	{
